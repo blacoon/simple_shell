@@ -104,6 +104,18 @@ char *_strdup(const char *s1);
 int _strcmp(const char *str1, const char *str2, size_t n);
 void putnbr_fd(int n, int fd);
 char *_itoa(int n);
+int _atoi(char *s);
+char *_strjoin(char *s1, char *s2);
+void my_exit(char **cmd, global_t *global);
+int is_num(char *str);
+void handler(int sig);
+int main(int ac, char **av, char **env);
+char *_strjoin(char *s1, char *s2);
+static char **m_error(char **arr);
+static int ft_count_words(char const *str, char charset);
+static int ft_word_len(char const *str, char charset);
+static char *ft_word_grep(char const *str, char charset);
+char **split(char const *s, char c);
+
 
 #endif
-
