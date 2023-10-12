@@ -95,5 +95,15 @@ typedef struct global_s
 
 # define BUFFER_SIZE 1024
 
+/**
+ * Function Prototypes
+ */
+char *var_re(char *ptr, global_t *global);
+size_t _strlen(const char *s);
+char *_strdup(const char *s1);
+int _strcmp(const char *str1, const char *str2, size_t n);
+void putnbr_fd(int n, int fd);
+char *_itoa(int n);
+
 #endif
 
