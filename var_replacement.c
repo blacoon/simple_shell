@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * help_va_re - Replace variables in a string
+ * help_var_re - Replace variables in a string
  * @ptr: the input string
  * @global: pointer to global_t structure
  *
  * Return: Pointer to modified string
  */
-char *help_va_re(char *ptr, global_t *global)
+char *help_var_re(char *ptr, global_t *global)
 {
 	int i = 0;
 	char **str = split(ptr, ' '), *str2 = NULL, *tmp;
@@ -35,13 +35,13 @@ char *help_va_re(char *ptr, global_t *global)
 }
 
 /**
- * va_re - Replace special variables in a string
+ * var_re - Replace special variables in a string
  * @ptr: The input string
  * @global: Pointer to global_t structure
  *
  * Return: Pointer to the modified string
  */
-char *va_re(char *ptr, global_t *global)
+char *var_re(char *ptr, global_t *global)
 {
 	char *str = NULL, *tmp;
 	int i = 0, j = 0;
@@ -72,5 +72,5 @@ char *va_re(char *ptr, global_t *global)
 	if (!str)
 		str = _strdup(ptr);
 	free(ptr);
-	return (help_va_re(str, global));
+	return (help_var_re(str, global));
 }
