@@ -116,6 +116,11 @@ static int ft_count_words(char const *str, char charset);
 static int ft_word_len(char const *str, char charset);
 static char *ft_word_grep(char const *str, char charset);
 char **split(char const *s, char c);
+void _alias(char **cmd, global_t *global);
+char *alias_search(char *str, global_t *global);
+alias_t *aliasSearch(char *str, global_t *global);
+char *alias(char *ptr, global_t *global);
+
 
 
 #endif

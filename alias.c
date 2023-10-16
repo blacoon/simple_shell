@@ -9,9 +9,9 @@
 char *alias(char *ptr, global_t *global)
 {
 	int i = 0;
-	char **str = split(ptr, ' '), *str = NULL, *tmp;
+	char **str = split(ptr, ' '), *str2 = NULL, *tmp;
 
-	while (str[i] && _strncmp(str[0], "alias", strlen("alias") + 1))
+	while (str[i] && _strcmp(str[0], "alias", strlen("alias") + 1))
 	{
 		if (alias_search(str[i], global))
 		{
@@ -25,7 +25,7 @@ char *alias(char *ptr, global_t *global)
 	while (str[i])
 	{
 		str2 = _strjoin(str2, str[i]);
-		str2 = _strjoin(str2. " ");
+		str2 = _strjoin(str2, " ");
 		i++;
 	}
 	i = 0;
@@ -77,7 +77,7 @@ char *aliasprint(char *str, global_t *global)
  * @cmd: Array of cmd strings passed to the alias function
  * @global: Pointer to the global env struct
  */
-VOID help_alias(char **cmd, global_t global)
+void help_alias(char **cmd, global_t *global)
 {
 	char *str1, *str2;
 	int i = 1, index;

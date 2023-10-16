@@ -6,7 +6,7 @@
  * @global: Pointer to the global env struct
  * Return: The value of the alias found, NULL otherwise
  */
-char *alias_search(char *str, global_t global)
+char *alias_search(char *str, global_t *global)
 {
 	alias_t *ptr;
 
@@ -26,7 +26,7 @@ char *alias_search(char *str, global_t global)
  * @global: POinter to the global env structure
  * Return: Pointer to the alias_t struct if found, NULL otherwise
  */
-alias_t *aliasSearch(char *str, global_t global)
+alias_t *aliasSearch(char *str, global_t *global)
 {
 	alias_t *ptr;
 

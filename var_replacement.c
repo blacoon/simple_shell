@@ -51,7 +51,7 @@ char *var_re(char *ptr, global_t *global)
 
 	while (ptr[i])
 	{
-		if (!_strcmp(ptr + i, "$$", 2) || !strcmp(ptr + i, "$?", 2))
+		if (!_strcmp(ptr + i, "$$", 2) || !_strcmp(ptr + i, "$?", 2))
 		{
 			if (!_strcmp(ptr + i, "$$", 2))
 				tmp = _itoa(global->pid);
