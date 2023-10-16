@@ -122,6 +122,7 @@ alias_t *aliasSearch(char *str, global_t *global);
 char *alias(char *ptr, global_t *global);
 char *str_copy1(char*str, int *idx, char a);
 int print(char *str, int fd, int new);
-
+void env(char **cmd, global_t *global);
+char *remove_comments(char *ptr, global_t *global, int fd);
 
 #endif
