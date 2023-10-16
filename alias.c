@@ -91,9 +91,9 @@ VOID help_alias(char **cmd, global_t global)
 			str1 = str_copy1(cmd[i], &index, '=');
 			index++;
 			str2 = _strdup(cmd[i] + index);
-			if (aliassearch(str1, global))
+			if (aliasSearch(str1, global))
 			{
-				node = aliassearch(str1, global);
+				node = aliasSearch(str1, global);
 				free(str1);
 				free(node->value);
 				node->value = str2;
