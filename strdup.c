@@ -21,7 +21,7 @@ char *_strdup(const char *s1)
 	if (!str_cpy)
 		return (NULL);
 	while (s1[++idx])
-		str_copy[idx] = s1[idx];
+		str_cpy[idx] = s1[idx];
 	str_cpy[idx] = '\0';
 	return (str_cpy);
 }

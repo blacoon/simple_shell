@@ -120,7 +120,8 @@ void _alias(char **cmd, global_t *global);
 char *alias_search(char *str, global_t *global);
 alias_t *aliasSearch(char *str, global_t *global);
 char *alias(char *ptr, global_t *global);
-
+char *str_copy1(char*str, int *idx, char a);
+int print(char *str, int fd, int new);
 
 
 #endif
