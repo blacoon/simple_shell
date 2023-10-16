@@ -124,5 +124,6 @@ char *str_copy1(char*str, int *idx, char a);
 int print(char *str, int fd, int new);
 void env(char **cmd, global_t *global);
 char *remove_comments(char *ptr, global_t *global, int fd);
+int print_error(char *cmd, char *msg, global_t *global);
 
 #endif
