@@ -126,5 +126,8 @@ void env(char **cmd, global_t *global);
 char *remove_comments(char *ptr, global_t *global, int fd);
 int print_error(char *cmd, char *msg, global_t *global);
 int exec_builtin(char **args, global_t *global);
+void init_env(char **envp, gloaba_t *global);
+char *env_search(char *str, global_t *global);
+env_t *envsearch(char *str, global_t *global);
 
 #endif
