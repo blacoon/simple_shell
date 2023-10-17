@@ -129,5 +129,28 @@ int exec_builtin(char **args, global_t *global);
 void init_env(char **envp, gloaba_t *global);
 char *env_search(char *str, global_t *global);
 env_t *envsearch(char *str, global_t *global);
+void free_all(global_t *global);
+void free_env(global_t *global);
+void free_alias(global_t *global);
+void free_commands(global_t *global);
+void executing(global_t *global);
+void exec_binary(command_t *command, global_t *global);
+void get_paths(global_t *global);
+char *get_path(char *str, global_t *global);
+void get_commands(char *ptr, global_t *global);
+static char *all(int fd, char *left);
+static char *get_line(char *line);
+static char *ft_left(char *line);
+char *_getline(int fd, global_t *global);
+void *my_memcpy(void *dst, const void *src, size_t n);
+size_t my_strlen(const char *s);
+char *my_strjoin(char *s1, char *s2);
+char *my_strchr(const char *s, int c);
+void exec_logical_operators(char **str, global_t *global);
+char **advanced_split(char *str, global_t *global);
+char *copy_str(char *str, int *index);
+int count_words(char *str, global_t *global);
+int is_lo_op(char *str);
+
 
 #endif
