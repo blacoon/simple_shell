@@ -120,10 +120,11 @@ void _alias(char **cmd, global_t *global);
 char *alias_search(char *str, global_t *global);
 alias_t *aliasSearch(char *str, global_t *global);
 char *alias(char *ptr, global_t *global);
-char *str_copy1(char*str, int *idx, char a);
+char *str_copy1(char *str, int *idx, char a);
 int print(char *str, int fd, int new);
 void env(char **cmd, global_t *global);
 char *remove_comments(char *ptr, global_t *global, int fd);
 int print_error(char *cmd, char *msg, global_t *global);
+int exec_builtin(char **args, global_t *global);
 
 #endif
