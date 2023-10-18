@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * alias_search - search for an alias.
- * @str: arg 1.
- * @global: arg 2.
- * Return: string or NULL.
+ * alias_search - Searches for an alias in the global alias list
+ * @str: The name of the alias to search for
+ * @global: Pointer to the global env struct
+ * Return: The value of the alias found, NULL otherwise
  */
 char	*alias_search(char	*str, global_t *global)
 {
@@ -20,10 +20,10 @@ char	*alias_search(char	*str, global_t *global)
 	return (0);
 }
 /**
- * aliassearch - search for an alias.
- * @str: arg 1.
- * @global: arg 2.
- * Return: alias_t or NULL.
+ * aliasSearch - Searches for an alias in the global alias list
+ * @str: The name of the alias to search for.
+ * @global: POinter to the global env structure
+ * Return: Pointer to the alias_t struct if found, NULL otherwise
  */
 alias_t	*aliassearch(char	*str, global_t *global)
 {
