@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * alias - Implements the alias built-in.
- * @ptr: arg 1.
- * @global: arg 2.
- * Return: string or NULL.
+ * alias - Implements the alias built-in command to manage command aliases
+ * @ptr: The command string passed to the alias command
+ * @global: Pointer to the global env struct
+ * Return: A modified string or NULL.
  */
 char	*alias(char *ptr, global_t *global)
 {
@@ -37,9 +37,9 @@ char	*alias(char *ptr, global_t *global)
 }
 
 /**
- * is_new - new alias or not.
- * @str: arg 1.
- * Return: 1 or 0.
+ * is_new - Checks if a given command string contains a new alias definition
+ * @str: The command string to be checked
+ * Return: 1 if the string contains a new alias otherwise 0.
  */
 int	is_new(char *str)
 {
@@ -54,10 +54,10 @@ int	is_new(char *str)
 	return (0);
 }
 /**
- * aliassprint - search for an alias.
- * @str: arg 1.
- * @global: arg 2.
- * Return: string or NULL.
+ * aliasprint - Searches for an alias and prints its definition
+ * @str: The alias name to be searched
+ * @global: Pointer to the global env struct
+ * Return: The alias definition or NULL
  */
 char	*aliassprint(char	*str, global_t *global)
 {
@@ -72,9 +72,9 @@ char	*aliassprint(char	*str, global_t *global)
 }
 
 /**
- * help__alias - help _alias function.
- * @cmd: arg 1.
- * @global: arg 2.
+ * help_alias - Provides help info for the alias function
+ * @cmd: Array of cmd strings passed to the alias function
+ * @global: Pointer to the global env struct
  */
 void help__alias(char **cmd, global_t *global)
 {
@@ -119,9 +119,9 @@ void help__alias(char **cmd, global_t *global)
 }
 
 /**
- * _alias - add or print alias.
- * @cmd: arg 1.
- * @global: arg 2.
+ * _alias - Handles the alias command, adding or printing aliases.
+ * @cmd: The array of cmd strings passed to the _alias function
+ * @global: Pointer to the global env struct
  */
 void _alias(char **cmd, global_t *global)
 {
