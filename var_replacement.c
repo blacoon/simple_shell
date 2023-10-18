@@ -1,15 +1,14 @@
 #include "shell.h"
 
 /**
- * help_var_re - Replace variables in a string
- * @ptr: the input string
- * @global: pointer to global_t structure
- *
- * Return: Pointer to modified string
+ *help_va_re - variables replacement.
+ *@ptr: arg 1.
+ *@global: arg 2.
+ *Return: pointer to  modified string
  */
-char *help_var_re(char *ptr, global_t *global)
+char *help_va_re(char *ptr, global_t *global)
 {
-	int i = 0;
+	int	i = 0;
 	char **str = split(ptr, ' '), *str2 = NULL, *tmp;
 
 	while (str[i])
@@ -25,7 +24,13 @@ char *help_var_re(char *ptr, global_t *global)
 		}
 		i++;
 	}
-
+	i = 0;
+	while (str[i])
+	{
+		str2 = _strjoin(str2, str[i]);
+		str2 = _strjoin(str2, " ");
+		i++;
+	}
 	i = 0;
 	while (str[i])
 		free(str[i++]);
@@ -35,42 +40,39 @@ char *help_var_re(char *ptr, global_t *global)
 }
 
 /**
- * var_re - Replace special variables in a string
- * @ptr: The input string
- * @global: Pointer to global_t structure
- *
- * Return: Pointer to the modified string
+ *va_re - variables replacement.
+ *@ptr: arg 1.
+ *@global: arg 2.
+ *Return: pointer to  modified string
  */
-char *var_re(char *ptr, global_t *global)
+char	*va_re(char *ptr, global_t *global)
 {
-	char *str = NULL, *tmp;
-	int i = 0, j = 0;
+	char	*str = NULL, *tmp;
+	int		i = 0, m = 0;
 
 	if (!ptr)
 		return (NULL);
-
 	while (ptr[i])
 	{
-		if (!_strcmp(ptr + i, "$$", 2) || !_strcmp(ptr + i, "$?", 2))
+		if (!_strncmp(ptr + i, "$$", 2) || !_strncmp(ptr + i, "$?", 2))
 		{
-			if (!_strcmp(ptr + i, "$$", 2))
+			if (!_strncmp(ptr + i, "$$", 2))
 				tmp = _itoa(global->pid);
-			else if (!_strcmp(ptr + i, "$?", 2))
+			else if (!_strncmp(ptr + i, "$?", 2))
 				tmp = _itoa(global->exit_code);
 			ptr[i] = 0;
-			str = _strjoin(str, ptr + j);
+			str = _strjoin(str, ptr + m);
 			str = _strjoin(str, tmp);
 			free(tmp);
 			ptr[i] = '$';
 			i++;
-			j = i + 1;
+			m = i + 1;
 		}
 		if (ptr[i])
 			i++;
 	}
-
 	if (!str)
 		str = _strdup(ptr);
 	free(ptr);
-	return (help_var_re(str, global));
+	return (help_va_re(str, global));
 }

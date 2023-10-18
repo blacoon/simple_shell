@@ -1,6 +1,5 @@
 #ifndef SHELL_H
-#define SHELL_H
-
+# define SHELL_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -24,10 +23,10 @@
  */
 typedef struct command_s
 {
-	char *path;
-	char **args;
-	char *tmp;
-	struct command_s *next;
+	char		        *path;
+	char		        **args;
+	char				*tmp;
+	struct command_s	*next;
 } command_t;
 
 /**
@@ -41,9 +40,9 @@ typedef struct command_s
  */
 typedef struct alias_s
 {
-	char *name;
-	char *value;
-	struct alias_s *next;
+	char		    *name;
+	char		    *value;
+	struct alias_s	*next;
 } alias_t;
 
 /**
@@ -57,9 +56,9 @@ typedef struct alias_s
  */
 typedef struct env_s
 {
-	char *name;
-	char *value;
-	struct env_s *next;
+	char		    *name;
+	char		    *value;
+	struct env_s	*next;
 } env_t;
 
 /**
@@ -80,77 +79,62 @@ typedef struct env_s
  */
 typedef struct global_s
 {
-	command_t *commands;
-	env_t *env;
-	alias_t *alias;
-	int exit_code;
-	pid_t pid;
-	char *name;
-	char **envp;
-	char *cmd;
-	char *left;
-	int n;
-	int fd;
+	command_t   *commands;
+	env_t       *env;
+	alias_t     *alias;
+	int		    exit_code;
+	pid_t       pid;
+	char        *name;
+	char        **envp;
+	char		*cmd;
+	char		*left;
+	int			n;
+	int			fd;
 } global_t;
 
 # define BUFFER_SIZE 1024
-
-/**
- * Function Prototypes
- */
-char *var_re(char *ptr, global_t *global);
-size_t _strlen(const char *s);
-char *_strdup(const char *s1);
-int _strcmp(const char *str1, const char *str2, size_t n);
-void putnbr_fd(int n, int fd);
-char *_itoa(int n);
-int _atoi(char *s);
-char *_strjoin(char *s1, char *s2);
-void my_exit(char **cmd, global_t *global);
-int is_num(char *str);
-void handler(int sig);
-int main(int ac, char **av, char **env);
-char *_strjoin(char *s1, char *s2);
-char **split(char const *s, char c);
-void _alias(char **cmd, global_t *global);
-char *alias_search(char *str, global_t *global);
-alias_t *aliasSearch(char *str, global_t *global);
-char *alias(char *ptr, global_t *global);
-char *str_copy1(char *str, int *idx, char a);
-int print(char *str, int fd, int new);
-void env(char **cmd, global_t *global);
-char *remove_comments(char *ptr, global_t *global, int fd);
-int print_error(char *cmd, char *msg, global_t *global);
-int exec_builtin(char **args, global_t *global);
-void init_env(char **envp, global_t *global);
-char *env_search(char *str, global_t *global);
-env_t *envsearch(char *str, global_t *global);
-void free_all(global_t *global);
-void free_env(global_t *global);
-void free_alias(global_t *global);
-void free_commands(global_t *global);
-void executing(global_t *global);
-void exec_binary(command_t *command, global_t *global);
-void get_paths(global_t *global);
-char *get_path(char *str, global_t *global);
-void get_commands(char *ptr, global_t *global);
-char *_getline(int fd, global_t *global);
-void *my_memcpy(void *dst, const void *src, size_t n);
-size_t my_strlen(const char *s);
-char *my_strjoin(char *s1, char *s2);
-char *my_strchr(const char *s, int c);
-void exec_logical_operators(char **str, global_t *global);
-char **advanced_split(char *str, global_t *global);
-char *copy_str(char *str, int *index);
-int count_words(char *str, global_t *global);
-int is_lo_op(char *str);
-void lstadd_back_env(env_t **lst, env_t *new);
-void lstadd_back_command(command_t **lst, command_t *new);
-void lstadd_back_alias(alias_t **lst, alias_t *new);
-void _setenv(char **cmd, global_t *global);
-void _unsetenv(char **cmd, global_t *global);
-void help_cd(char **cmd, global_t *global);
-void help_cd2(char **cmd, global_t *global);
-void cd(char **cmd, global_t *global);
-
+char	*_getline(int fd, global_t *global);
+size_t	my_strlen(const char *s);
+char	*my_strjoin(char *s1, char *s2);
+char	*my_strchr(const char *s, int c);
+void	*my_memcpy(void *dst, const void *src, size_t n);
+char	*remove_comments(char *ptr, global_t *global, int fd);
+void	lstadd_back_env(env_t **lst, env_t *new);
+void	init_env(char **envp, global_t *global);
+char	*env_search(char	*str, global_t *global);
+size_t	_strlen(const char *s);
+int     _strncmp(const char *s1, const char *s2, size_t n);
+void	lstadd_back_command(command_t **lst, command_t *new);
+void	lstadd_back_alias(alias_t **lst, alias_t *new);
+char	**split(char const *s, char c);
+char	*_strdup(const char *s1);
+char	*alias(char *ptr, global_t *global);
+char	*_strjoin(char *s1, char *s2);
+char	*_itoa(int n);
+char    *va_re(char *ptr, global_t *global);
+void	get_commands(char *ptr, global_t *global);
+int		exec_builtin(char **args, global_t *global);
+void	executing(global_t *global);
+int     print_error(char *cmd, char *msg, global_t *global);
+void    env(char **cmd, global_t *global);
+void	cd(char **cmd, global_t *global);
+void    my_exit(char **cmd, global_t *global);
+void	free_all(global_t *global);
+void	free_commands(global_t *global);
+int		print(char *str, int fd, int new);
+int		_atoi(char *s);
+void	_setenv(char **cmd, global_t *global);
+env_t	*envsearch(char	*str, global_t *global);
+void	_unsetenv(char **cmd, global_t *global);
+void	putnbr_fd(int n, int fd);
+char	*str_copy1(char	*str, int *index, char a);
+void	_alias(char **cmd, global_t *global);
+char	*alias_search(char	*str, global_t *global);
+alias_t	*aliassearch(char	*str, global_t *global);
+int		is_lo_op(char *str);
+char	**advanced_split(char *str, global_t *global);
+void	exec_logical_operators(char **str, global_t *global);
+char	*get_path(char *str, global_t *global);
+void	exec_binary(command_t *command, global_t *global);
+extern char **environ;
 #endif

@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  *handler - signal handler for Ctrl+C=SIGINT.
  *@sig: arg 1.
@@ -15,12 +14,12 @@ void handler(int sig)
  *@ac: The number of arguments
  *@av: Array of argument strings
  *@env: Array of environment string
- *Return: 0 always
+ * Return: 0 always
  */
 int main(int ac, char **av, char **env)
 {
-	char *ptr, fd = 0;
-	global_t *global;
+	char		*ptr, fd = 0;
+	global_t	*global;
 
 	signal(SIGINT, handler);
 	global = malloc(sizeof(global_t));
@@ -55,3 +54,4 @@ int main(int ac, char **av, char **env)
 	free_all(global);
 	return (0);
 }
+

@@ -1,43 +1,43 @@
 #include "shell.h"
 
 /**
- * exec_builtin - Execute built-in command if available
- * @args: Array of strings containing the command and its arguments
- * @global: Pointer to the global state structure
- * Return: 1 if the command is a built-in, ) otherwise
- */
-int exec_builtin(char **args, global_t *global)
+*exec_builtin - run built-in command.
+*@args: arg 1.
+*@global:arg 2.
+* Return: 1 if the command is a built-in.
+*/
+int	exec_builtin(char **args, global_t *global)
 {
-	char *cmd = args[0];
+	char	*cmd = args[0];
 
 	if (!cmd)
 		return (0);
-	else if (!_strcmp("env", cmd, _strlen("env") + 1))
+	else if (!_strncmp("env", cmd, _strlen("env") + 1))
 	{
 		env(args, global);
 		return (1);
 	}
-	else if (!_strcmp("cd", cmd, _strlen("cd") + 1))
+	else if (!_strncmp("cd", cmd, _strlen("cd") + 1))
 	{
 		cd(args, global);
 		return (1);
 	}
-	else if (!_strcmp("exit", cmd, _strlen("exit") + 1))
+	else if (!_strncmp("exit", cmd, _strlen("exit") + 1))
 	{
 		my_exit(args, global);
 		return (1);
 	}
-	else if (!_strcmp("setenv", cmd, _strlen("setenv") + 1))
+	else if (!_strncmp("setenv", cmd, _strlen("setenv") + 1))
 	{
 		_setenv(args, global);
 		return (1);
 	}
-	else if (!_strcmp("unsetenv", cmd, _strlen("unsetenv") + 1))
+	else if (!_strncmp("unsetenv", cmd, _strlen("unsetenv") + 1))
 	{
 		_unsetenv(args, global);
 		return (1);
 	}
-	else if (!_strcmp("alias", cmd, _strlen("alias") + 1))
+	else if (!_strncmp("alias", cmd, _strlen("alias") + 1))
 	{
 		_alias(args, global);
 		return (1);

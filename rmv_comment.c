@@ -1,16 +1,16 @@
 #include "shell.h"
 
 /**
- * remove_comments - Remove comments from the inputs string
- * @ptr: Pointer to the input string containing comments
- * @global: Pointer to the global state struct
- * @fd: File descriptor for standard output
- * Return: A new string without comments
+ *remove_comments - removes comments from a string.
+ *@ptr: arg 1.
+ *@global: arg 2.
+ *@fd: arg 3.
+ *Return: string.
  */
 char *remove_comments(char *ptr, global_t *global, int fd)
 {
 	int len = 0, i = 0, n;
-	char *str;
+	char    *str;
 
 	if (!ptr)
 	{
@@ -21,7 +21,6 @@ char *remove_comments(char *ptr, global_t *global, int fd)
 		free_all(global);
 		exit(n);
 	}
-
 	while (ptr[len] && ptr[len] != '\n')
 	{
 		if (ptr[len] == '#')

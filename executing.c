@@ -5,10 +5,10 @@
  *@command: arg 1.
  *@global: arg 2.
  */
-void exec_binary(command_t *command, global_t *global)
+void	exec_binary(command_t *command, global_t *global)
 {
-	pid_t n;
-	int m;
+	pid_t	n;
+	int		m;
 
 	if (!command->path)
 	{
@@ -38,11 +38,11 @@ void exec_binary(command_t *command, global_t *global)
  *executing - Execute commands.
  *@global: arg 1.
  */
-void executing(global_t *global)
+void	executing(global_t *global)
 {
-	command_t *tmp = global->commands;
-	char **str;
-	id_t i = 0;
+	command_t	*tmp = global->commands;
+	char		**str;
+	id_t		i = 0;
 
 	while (tmp)
 	{

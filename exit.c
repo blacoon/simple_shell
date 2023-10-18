@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * is_num - checks if it is number.
- * @str: argument 1.
+ * is_num - is number.
+ * @str: arg 1.
  * Return: 1 if is number.
  */
-int is_num(char *str)
+int	is_num(char *str)
 {
 	int i = 0;
 
@@ -30,7 +30,7 @@ int is_num(char *str)
  * @cmd: arg 1;
  * @global: arg 2.
  */
-void my_exit(char **cmd, global_t *global)
+void    my_exit(char **cmd, global_t *global)
 {
 	int n;
 

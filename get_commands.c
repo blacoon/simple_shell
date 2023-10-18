@@ -6,15 +6,15 @@
  *@global: arg 2.
  *Return: The Path of the command.
  */
-char *get_path(char *str, global_t *global)
+char	*get_path(char *str, global_t *global)
 {
-	char *ptr = _strdup(str), **paths, *tmp;
-	int i = 0;
+	char	*ptr = _strdup(str), **paths, *tmp;
+	int		i = 0;
 
 	if (!access(ptr, F_OK))
 	{
-		if (!_strcmp(ptr, "/", 1) || !_strcmp(ptr, "./", 2) ||
-			!_strcmp(ptr, "../", 3))
+		if (!_strncmp(ptr, "/", 1) || !_strncmp(ptr, "./", 2) ||
+			!_strncmp(ptr, "../", 3))
 			return (ptr);
 	}
 	paths = split(env_search("PATH", global), ':');
@@ -51,9 +51,9 @@ char *get_path(char *str, global_t *global)
  *get_paths - Get the full paths of commands.
  *@global: arg 2.
  */
-void get_paths(global_t *global)
+void	get_paths(global_t *global)
 {
-	command_t *tmp = global->commands;
+	command_t	*tmp = global->commands;
 
 	while (tmp)
 	{
@@ -68,11 +68,11 @@ void get_paths(global_t *global)
  *@ptr: arg 1.
  *@global: arg 2.
  */
-void get_commands(char *ptr, global_t *global)
+void	get_commands(char *ptr, global_t *global)
 {
-	char **commands;
-	int i = 0;
-	command_t *node;
+	char	    **commands;
+	int         i = 0;
+	command_t   *node;
 
 	free_commands(global);
 	if (!ptr)
@@ -80,7 +80,7 @@ void get_commands(char *ptr, global_t *global)
 	commands = split(ptr, ';');
 	while (commands[i])
 	{
-		commands[i] = var_re(alias(commands[i], global), global);
+		commands[i] = va_re(alias(commands[i], global), global);
 		node = malloc(sizeof(command_t));
 		node->path = NULL;
 		node->next = NULL;

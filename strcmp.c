@@ -1,20 +1,20 @@
 #include "shell.h"
 
 /**
- * _strcmp - Compares two strings
- * @str1: first string argument
- * @str2: second string argument
- * @n: maximum number of character to compare
- * Return: 0 if equal
+ *_strncmp - Compares two strings.
+ *@s1: arg 1.
+ *@s2: arg 2.
+ *@n: arg 3.
+ *Return: 0 if equal.
  */
-int _strcmp(const char *str1, const char *str2, size_t n)
+int	_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!n)
 		return (0);
-	while (str1[i] && str2[i] && str1[i] == str2[i] && i < n - 1)
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
 		i++;
-	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

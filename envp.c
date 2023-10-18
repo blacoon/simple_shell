@@ -72,7 +72,7 @@ char *env_search(char *str, global_t *global)
 	ptr = global->env;
 	while (ptr)
 	{
-		if (ptr->name && !_strcmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
 			return (ptr->value);
 		ptr = ptr->next;
 	}
@@ -92,7 +92,7 @@ env_t *envsearch(char *str, global_t *global)
 	ptr = global->env;
 	while (ptr)
 	{
-		if (ptr->name && !_strcmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
 			return (ptr);
 		ptr = ptr->next;
 	}

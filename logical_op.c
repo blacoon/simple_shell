@@ -153,11 +153,11 @@ void exec_logical_operators(char **str, global_t *global)
 		i = 0;
 		while (1)
 		{
-			if (!str[i] || !_strcmp(str[i], "||", 3) || !_strcmp(str[i], "&&", 3))
+			if (!str[i] || !_strncmp(str[i], "||", 3) || !_strncmp(str[i], "&&", 3))
 			{
-				if (str[i] && !_strcmp(str[i], "&&", 3))
+				if (str[i] && !_strncmp(str[i], "&&", 3))
 					m = '&';
-				else if (str[i] && !_strcmp(str[i], "||", 3))
+				else if (str[i] && !_strncmp(str[i], "||", 3))
 					m = '|';
 				if (!str[i])
 					v = 0;
