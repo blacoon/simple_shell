@@ -7,8 +7,8 @@
  */
 void _setenv(char **cmd, global_t *global)
 {
-	int i = 0;
-	env_t *tmp;
+	int		i = 0;
+	env_t	*tmp;
 
 	(void)global;
 	while (cmd[i])
@@ -45,8 +45,8 @@ void _setenv(char **cmd, global_t *global)
  */
 void _unsetenv(char **cmd, global_t *global)
 {
-	env_t *tmp;
-	int i = 1;
+	env_t	*tmp;
+	int		i = 1;
 
 	if (!cmd[1])
 	{
