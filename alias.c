@@ -3,7 +3,7 @@
 /**
  * alias - Implements the alias built-in command to manage command aliases
  * @ptr: The command string passed to the alias command
- * @global: POinter to the global env struct
+ * @global: Pointer to the global env struct
  * Return: A modified string or NULL.
  */
 char *alias(char *ptr, global_t *global)
@@ -39,7 +39,7 @@ char *alias(char *ptr, global_t *global)
 /**
  * is_new - Checks if a given command string contains a new alias definition
  * @str: The command string to be checked
- * Return: 1 if the string contains a new alias, 0 otherwise
+ * Return: 1 if the string contains a new alias otherwise 0.
  */
 int is_new(char *str)
 {

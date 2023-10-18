@@ -151,6 +151,13 @@ char **advanced_split(char *str, global_t *global);
 char *copy_str(char *str, int *index);
 int count_words(char *str, global_t *global);
 int is_lo_op(char *str);
-
+void lstadd_back_env(env_t **lst, env_t *new);
+void lstadd_back_command(command_t **lst, command_t *new);
+void lstadd_back_alias(alias_t **lst, alias_t *new);
+void _setenv(char **cmd, global_t *global);
+void _unsetenv(char **cmd, global_t *global);
+void help_cd(char **cmd, global_t *global);
+void help_cd2(char **cmd, global_t *global);
+void cd(char **cmd, global_t *global);
 
 #endif

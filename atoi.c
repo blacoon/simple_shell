@@ -2,7 +2,7 @@
 
 /**
  * _atoi - function that converts a string to an integer.
- * @s: arg 1.
+ * @s: The pointer to the string to be converted.
  * Return: returns an integer.
  */
 int _atoi(char *s)
