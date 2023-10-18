@@ -13,8 +13,8 @@ char *get_path(char *str, global_t *global)
 
 	if (!access(ptr, F_OK))
 	{
-		if (!_strncmp(ptr, "/", 1) || !_strncmp(ptr, "./", 2) ||
-			!_strncmp(ptr, "../", 3))
+		if (!_strcmp(ptr, "/", 1) || !_strcmp(ptr, "./", 2) ||
+			!_strcmp(ptr, "../", 3))
 			return (ptr);
 	}
 	paths = split(env_search("PATH", global), ':');
@@ -80,7 +80,7 @@ void get_commands(char *ptr, global_t *global)
 	commands = split(ptr, ';');
 	while (commands[i])
 	{
-		commands[i] = va_re(alias(commands[i], global), global);
+		commands[i] = var_re(alias(commands[i], global), global);
 		node = malloc(sizeof(command_t));
 		node->path = NULL;
 		node->next = NULL;

@@ -37,5 +37,5 @@ alias_t *aliasSearch(char *str, global_t *global)
 			return (ptr);
 		ptr = ptr->next;
 	}
-	return (NULL);
+	return (0);
 }

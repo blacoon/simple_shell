@@ -9,9 +9,7 @@ void putnbr_fd(int n, int fd)
 {
 	if (n < 10)
 	{
-		char digit = '0' + n;
-
-		write(fd, &digit, 1);
+		write(fd, &"0123456789"[n % 10], 1);
 	}
 	else
 	{

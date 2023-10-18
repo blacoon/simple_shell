@@ -43,7 +43,7 @@ void init_env(char **envp, global_t *global)
 	{
 		idx = 0;
 		env = malloc(sizeof(env_t));
-		env->name = str_copy1(envp[i], &index, '=');
+		env->name = str_copy1(envp[i], &idx, '=');
 		idx++;
 		env->value = str_copy1(envp[i], &idx, 0);
 		env->next = NULL;

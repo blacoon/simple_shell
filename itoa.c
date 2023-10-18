@@ -44,7 +44,7 @@ char *_itoa(int n)
 
 	neg = n < 0;
 	len = ft_nbrpow(n) + neg;
-	res = malloc(sizeof(char) * (len + 1));
+	res = malloc(sizeof(char) * len + 1);
 	if (!res)
 		return (NULL);
 	res[len--] = '\0';

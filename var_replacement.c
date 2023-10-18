@@ -20,7 +20,7 @@ char *help_var_re(char *ptr, global_t *global)
 			if (env_search(str[i] + 1, global))
 				str[i] = _strdup(env_search(str[i] + 1, global));
 			else
-				str[i] = _strdup('');
+				str[i] = _strdup("");
 			free(tmp);
 		}
 		i++;
