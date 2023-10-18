@@ -1,46 +1,45 @@
 #include "shell.h"
 
 /**
- * ft_abs - Calculates the absolute value of a number.
- * @n: The number to calculate the absolute value for.
- * Return: The absolute value of nb.
+ *ft_abs - abs.
+ *@nb: arg 1.
+ *Return: pos num.
  */
-static int ft_abs(int n)
+static int	ft_abs(int nb)
 {
-	if (n < 0)
-	{
-		return (n * -1);
-	}
-	return (n);
+	if (nb < 0)
+		return (nb * -1);
+	return (nb);
 }
 
 /**
- * ft_nbrpow - Calculates the nuimber of digits in a number.
- * @n: The number to calculate the digit for.
- * Return: The number of digits in n.
+ *ft_nbrpow - pow.
+ *@nbr: arg 1.
+ *Return: pow.
  */
-static int ft_nbrpow(int n)
+static int	ft_nbrpow(int nbr)
 {
-	int pow = 1;
+	int	pow;
 
-	while (n > 9 || n < -9)
+	pow = 1;
+	while (nbr > 9 || nbr < -9)
 	{
-		n /= 10;
+		nbr /= 10;
 		pow++;
 	}
 	return (pow);
 }
 
 /**
- * _itoa - Converts an integer to a string.
- * @n: The integer to be converted.
- * Return: The resulting string.
+ *_itoa - int to array of chars.
+ *@n: arg 1.
+ *Return: string.
  */
-char *_itoa(int n)
+char	*_itoa(int n)
 {
-	char *res;
-	int len;
-	int neg;
+	char	*res;
+	int		len;
+	int		neg;
 
 	neg = n < 0;
 	len = ft_nbrpow(n) + neg;

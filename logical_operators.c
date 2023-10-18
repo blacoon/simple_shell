@@ -5,9 +5,9 @@
  *@str: arg 1.
  *Return: 0 or 1.
  */
-int is_lo_op(char *str)
+int	is_lo_op(char *str)
 {
-	int i = 0;
+	int	i = 0;
 
 	while (str[i])
 	{
@@ -26,9 +26,9 @@ int is_lo_op(char *str)
  *@global: arg 2.
  *Return: number of words.
  */
-int count_words(char *str, global_t *global)
+int	count_words(char *str, global_t *global)
 {
-	int count = 0, c = 1, i = 0;
+	int	count = 0, c = 1, i = 0;
 
 	if (str[0] == '|' && str[1] && str[1] == '|')
 	{
@@ -75,8 +75,8 @@ int count_words(char *str, global_t *global)
  */
 char *copy_str(char *str, int *index)
 {
-	int i = *index, start, len = 0;
-	char *ptr;
+	int		i = *index, start, len = 0;
+	char	*ptr;
 
 	while (str[i] && (str[i] == ' ' || str[i] == '\t'))
 		i++;
@@ -121,8 +121,8 @@ char *copy_str(char *str, int *index)
  */
 char **advanced_split(char *str, global_t *global)
 {
-	int count = count_words(str, global), i = 0, index = 0;
-	char **ptr;
+	int		count = count_words(str, global), i = 0, index = 0;
+	char	**ptr;
 
 	if (!count)
 		return (NULL);
@@ -143,9 +143,9 @@ char **advanced_split(char *str, global_t *global)
  */
 void exec_logical_operators(char **str, global_t *global)
 {
-	int i = 0;
-	char n = 0, m, v = 1;
-	command_t *node = malloc(sizeof(command_t));
+	int		i = 0;
+	char	n = 0, m, v = 1;
+	command_t	*node = malloc(sizeof(command_t));
 
 	while (str[i])
 	{

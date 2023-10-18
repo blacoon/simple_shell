@@ -2,16 +2,16 @@
 
 /**
  *_strjoin - concatenates two strings.
- *@s1: argument 1.
- *@s2: argument 2.
+ *@s1: arg 1.
+ *@s2: arg 2.
  *Return: A new string.
  */
-char *_strjoin(char *s1, char *s2)
+char	*_strjoin(char *s1, char *s2)
 {
-	char *str;
-	int len_1;
-	int len_2;
-	int i;
+	char	*str;
+	int		len_1;
+	int		len_2;
+	int		i;
 
 	i = 0;
 	if (!s2)

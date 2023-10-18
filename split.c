@@ -4,9 +4,9 @@
  *@arr: arg 1.
  *Return:NULL
  */
-static char **m_error(char **arr)
+static char	**m_error(char	**arr)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (arr[i])
@@ -21,10 +21,10 @@ static char **m_error(char **arr)
  *@charset: arg 2.
  *Return: the num of words.
  */
-static int ft_count_words(char const *str, char charset)
+static int	ft_count_words(char const *str, char charset)
 {
-	int i;
-	int nbr_w;
+	int	i;
+	int	nbr_w;
 
 	nbr_w = 0;
 	i = 0;
@@ -46,7 +46,7 @@ static int ft_count_words(char const *str, char charset)
  *@charset: arg 2.
  *Return: The length.
  */
-static int ft_word_len(char const *str, char charset)
+static int	ft_word_len(char const *str, char charset)
 {
 	int	i;
 
@@ -62,7 +62,7 @@ static int ft_word_len(char const *str, char charset)
  *@charset: arg 2.
  *Return: ne word.
  */
-static char *ft_word_grep(char const *str, char charset)
+static char	*ft_word_grep(char const *str, char charset)
 {
 	int		len_w;
 	int		i;
@@ -88,10 +88,10 @@ static char *ft_word_grep(char const *str, char charset)
  *@c: arg 2.
  *Return: An array of pointers.
  */
-char **split(char const *s, char c)
+char	**split(char const *s, char c)
 {
-	int i;
-	char **splited;
+	int			i;
+	char		**splited;
 
 	if (!s)
 		return (NULL);

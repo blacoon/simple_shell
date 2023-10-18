@@ -7,10 +7,10 @@
  * @n: arg 3.
  * Return: Pointer.
  */
-void *my_memcpy(void *dst, const void *src, size_t n)
+void	*my_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *d;
-	unsigned char *s;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	if (!dst && !src)
 		return (0);
@@ -29,9 +29,9 @@ void *my_memcpy(void *dst, const void *src, size_t n)
  * @s: arg 1.
  * Return: The length.
  */
-size_t my_strlen(const char *s)
+size_t	my_strlen(const char *s)
 {
-	size_t n;
+	size_t	n;
 
 	n = 0;
 	while (s[n])
@@ -45,11 +45,11 @@ size_t my_strlen(const char *s)
  * @s2: arg 2.
  * Return: Pointer to the concatenated string.
  */
-char *my_strjoin(char *s1, char *s2)
+char	*my_strjoin(char *s1, char *s2)
 {
-	size_t ls1;
-	size_t ls2;
-	char *ptr;
+	size_t	ls1;
+	size_t	ls2;
+	char	*ptr;
 
 	if (!s2)
 		return (0);
@@ -79,9 +79,9 @@ char *my_strjoin(char *s1, char *s2)
  * @c: arg 2.
  * Return: Pointer or NULL.
  */
-char *my_strchr(const char *s, int c)
+char	*my_strchr(const char *s, int c)
 {
-	char *n;
+	char	*n;
 
 	n = (char *)s;
 	if (!s)

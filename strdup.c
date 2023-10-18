@@ -1,27 +1,25 @@
 #include "shell.h"
 
 /**
- * _strdup - it duplicates a string.
- * @s1: the string to be duplicated
- * Return: the duplicated string
+ * _strdup - duplicates a string.
+ * @s1: arg 1.
+ * Return: the new string.
  */
-
-char *_strdup(const char *s1)
+char	*_strdup(const char *s1)
 {
-	int len;
-	int idx;
-	char *str_cpy;
+	int		len;
+	int		index;
+	char	*src_copy;
 
 	len = 0;
-	idx = -1;
-
+	index = -1;
 	while (s1[len])
 		len++;
-	str_cpy = malloc(sizeof(char) * (len + 1));
-	if (!str_cpy)
+	src_copy = malloc(sizeof(char) * (len + 1));
+	if (!src_copy)
 		return (NULL);
-	while (s1[++idx])
-		str_cpy[idx] = s1[idx];
-	str_cpy[idx] = 0;
-	return (str_cpy);
+	while (s1[++index])
+		src_copy[index] = s1[index];
+	src_copy[index] = 0;
+	return (src_copy);
 }

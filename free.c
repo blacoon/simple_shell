@@ -4,11 +4,11 @@
  *free_commands - Free command structures.
  *@global: arg 1.
  */
-void free_commands(global_t *global)
+void    free_commands(global_t *global)
 {
-	command_t *tmp = global->commands, *tmp2;
-	char **str;
-	int i;
+	command_t	*tmp = global->commands, *tmp2;
+	char		**str;
+	int			i;
 
 	while (tmp)
 	{
@@ -29,7 +29,7 @@ void free_commands(global_t *global)
  *free_alias - Free alias structures.
  *@global: arg 1.
  */
-void free_alias(global_t *global)
+void    free_alias(global_t *global)
 {
 	alias_t	*tmp = global->alias, *tmp2;
 
@@ -47,9 +47,9 @@ void free_alias(global_t *global)
  *free_env - Free env structures.
  *@global: arg 1.
  */
-void free_env(global_t *global)
+void    free_env(global_t *global)
 {
-	env_t *tmp = global->env, *tmp2;
+	env_t	*tmp = global->env, *tmp2;
 
 	while (tmp)
 	{
