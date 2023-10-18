@@ -2,8 +2,8 @@
 
 /**
  *help_cd - help cd function.
- *@cmd: arg 1.
- *@global: arg 2.
+ *@cmd: The pointer to the pointer of the command.
+ *@global: The second argument.
  */
 void help_cd(char **cmd, global_t *global)
 {
@@ -42,9 +42,9 @@ void help_cd(char **cmd, global_t *global)
 }
 
 /**
- *help_cd2 - help cd function.
- *@cmd: arg 1.
- *@global: arg 2.
+ *help_cd - help cd function.
+ *@cmd: The pointer to the pointer of the command.
+ *@global: The pointer to the global state struct.
  */
 void help_cd2(char **cmd, global_t *global)
 {
