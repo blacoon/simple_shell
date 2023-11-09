@@ -6,7 +6,7 @@
  * @global: Pointer to the global env struct
  * Return: A modified string or NULL.
  */
-char	*alias(char *ptr, global_t *global)
+char *theAlias(char *ptr, global_t *global)
 {
 	int	i = 0;
 	char **str = split(ptr, ' '), *str2 = NULL, *tmp;
@@ -41,7 +41,7 @@ char	*alias(char *ptr, global_t *global)
  * @str: The command string to be checked
  * Return: 1 if the string contains a new alias otherwise 0.
  */
-int	is_new(char *str)
+int	the_is_new(char *str)
 {
 	int	i = 0;
 
@@ -59,7 +59,7 @@ int	is_new(char *str)
  * @global: Pointer to the global env struct
  * Return: The alias definition or NULL
  */
-char	*aliassprint(char	*str, global_t *global)
+char	*the_aliassprint(char	*str, global_t *global)
 {
 	if (alias_search(str, global))
 	{
@@ -76,7 +76,7 @@ char	*aliassprint(char	*str, global_t *global)
  * @cmd: Array of cmd strings passed to the alias function
  * @global: Pointer to the global env struct
  */
-void help__alias(char **cmd, global_t *global)
+void the_help__alias(char **cmd, global_t *global)
 {
 	char	*str1, *str2;
 	int		i = 1, index;
@@ -123,7 +123,7 @@ void help__alias(char **cmd, global_t *global)
  * @cmd: The array of cmd strings passed to the _alias function
  * @global: Pointer to the global env struct
  */
-void _alias(char **cmd, global_t *global)
+void the_alias(char **cmd, global_t *global)
 {
 	alias_t *ptr = global->alias;
 	int		i = 1;
