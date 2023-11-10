@@ -1,14 +1,15 @@
 #include "shell.h"
 
 /**
- *freeCommands - Free command structures.
- *@global: arg 1.
+ * freeCommands - frees command structures.
+ * @global: first argument.
  */
-void    freeCommands(global_t *global)
+
+void freeCommands(global_t *global)
 {
-	command_t	*tmp = global->commands, *tmp2;
-	char		**str;
-	int			i;
+	command_t *tmp = global->commands, *tmp2;
+	char **str;
+	int i;
 
 	while (tmp)
 	{
@@ -25,10 +26,12 @@ void    freeCommands(global_t *global)
 	}
 	global->commands = NULL;
 }
+
 /**
- *freeAlias - Free alias structures.
- *@global: arg 1.
+ * freeAlias - frees alias structures.
+ * @global: first argument.
  */
+
 void    freeAlias(global_t *global)
 {
 	alias_t	*tmp = global->alias, *tmp2;
@@ -43,11 +46,13 @@ void    freeAlias(global_t *global)
 	}
 	global->alias = NULL;
 }
+
 /**
- *freeEnv - Free env structures.
- *@global: arg 1.
+ * freeEnv - frees env structures.
+ * @global: first argument.
  */
-void    freeEnv(global_t *global)
+
+void freeEnv(global_t *global)
 {
 	env_t	*tmp = global->env, *tmp2;
 
@@ -63,9 +68,10 @@ void    freeEnv(global_t *global)
 }
 
 /**
- * freeAll - free all.
- * @global: arg 1.
+ * freeAll - Free all.
+ * @global: first argument.
  */
+
 void freeAll(global_t *global)
 {
 	free_commands(global);
