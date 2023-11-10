@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- *execBinary - Execute binary fils.
- *@command: arg 1.
- *@global: arg 2.
+ * execBinary - executes binary.
+ * @command: first argument.
+ * @global: second argument.
  */
-void	execBinary(command_t *command, global_t *global)
+void execBinary(command_t *command, global_t *global)
 {
-	pid_t	n;
-	int		m;
+	pid_t n;
+	int m;
 
 	if (!command->path)
 	{
@@ -35,10 +35,10 @@ void	execBinary(command_t *command, global_t *global)
 }
 
 /**
- *	exe - Execute commands.
- *	@global: arg 1.
+ * exe - executes commands.
+ * @global: first argument.
  */
-void	exe(global_t *global)
+void exe(global_t *global)
 {
 	command_t	*tmp = global->commands;
 	char		**str;
