@@ -1,14 +1,15 @@
 #include "shell.h"
 
 /**
- *_setenv - set var env.
- *@cmd: arg 1.
- *@global: arg 2.
+ * _Set_env - sets variable env.
+ * @cmd: first argument.
+ * @global: second argument.
  */
-void _setenv(char **cmd, global_t *global)
+
+void _Set_env(char **cmd, global_t *global)
 {
-	int		i = 0;
-	env_t	*tmp;
+	int i = 0;
+	env_t *tmp;
 
 	(void)global;
 	while (cmd[i])
