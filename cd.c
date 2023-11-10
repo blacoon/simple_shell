@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- *help_cd - help cd function.
+ *helpCD - help cd function.
  *@cmd: The pointer to the pointer of the command.
  *@global: The second argument.
  */
-void help_cd(char **cmd, global_t *global)
+void helpCD(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
 
@@ -42,11 +42,11 @@ void help_cd(char **cmd, global_t *global)
 }
 
 /**
- *help_cd - help cd function.
+ *helpCD2 - help cd function.
  *@cmd: The pointer to the pointer of the command.
  *@global: The pointer to the global state struct.
  */
-void help_cd2(char **cmd, global_t *global)
+void helpCD2(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
 
@@ -78,11 +78,11 @@ void help_cd2(char **cmd, global_t *global)
 }
 
 /**
- *cd - change the current directory.
+ *_cd - change the current directory.
  *@cmd: arg 1.
  *@global: arg 2.
  */
-void cd(char **cmd, global_t *global)
+void _cd(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
 
