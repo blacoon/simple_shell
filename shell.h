@@ -1,15 +1,15 @@
 #ifndef SHELL_H
-# define SHELL_H
-#include <stdio.h>
-#include <stdlib.h>
+#define SHELL_H
 #include <signal.h>
-#include <string.h>
-#include <fcntl.h>
-#include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/types.h>
 #include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct command_s - singly linked list
@@ -93,48 +93,48 @@ typedef struct global_s
 } global_t;
 
 # define BUFFER_SIZE 1024
-char	*_getline(int fd, global_t *global);
-size_t	my_strlen(const char *s);
-char	*my_strjoin(char *s1, char *s2);
-char	*my_strchr(const char *s, int c);
-void	*my_memcpy(void *dst, const void *src, size_t n);
-char	*remove_comments(char *ptr, global_t *global, int fd);
-void	lstadd_back_env(env_t **lst, env_t *new);
-void	init_env(char **envp, global_t *global);
-char	*env_search(char	*str, global_t *global);
-size_t	_strlen(const char *s);
-int     _strncmp(const char *s1, const char *s2, size_t n);
-void	lstadd_back_command(command_t **lst, command_t *new);
-void	lstadd_back_alias(alias_t **lst, alias_t *new);
-char	**split(char const *s, char c);
-char	*_strdup(const char *s1);
+char	*_get_line(int fd, global_t *global);
+size_t	_my_str_len(const char *s);
+char	*_my_str_conc(char *s1, char *s2);
+char	*_my_str_chrc(const char *s, int c);
+void	*_my_memcpy(void *dst, const void *src, size_t n);
+char	*rem_comm(char *ptr, global_t *global, int fd);
+void	_add_back_env(env_t **lst, env_t *new);
+void	initEnv(char **envp, global_t *global);
+char	*envSearch(char	*str, global_t *global);
+size_t	_Str_len(const char *s);
+int     _Str_comp(const char *s1, const char *s2, size_t n);
+void	_add_back_comm(command_t **lst, command_t *new);
+void	_add_back_alias(alias_t **lst, alias_t *new);
+char	**the_split(char const *s, char c);
+char	*_Str_dup(const char *s1);
 char	*theAlias(char *ptr, global_t *global);
-char	*_strjoin(char *s1, char *s2);
-char	*_itoa(int n);
-char    *va_re(char *ptr, global_t *global);
-void	get_commands(char *ptr, global_t *global);
-int	exec_builtin(char **args, global_t *global);
-void	executing(global_t *global);
-int     print_error(char *cmd, char *msg, global_t *global);
-void    env(char **cmd, global_t *global);
-void	cd(char **cmd, global_t *global);
-void    my_exit(char **cmd, global_t *global);
-void	free_all(global_t *global);
-void	free_commands(global_t *global);
-int	print(char *str, int fd, int new);
-int	_atoi(char *s);
-void	_setenv(char **cmd, global_t *global);
-env_t	*envsearch(char	*str, global_t *global);
-void	_unsetenv(char **cmd, global_t *global);
-void	putnbr_fd(int n, int fd);
-char	*str_copy1(char	*str, int *index, char a);
+char	*_Str_conc(char *s1, char *s2);
+char	*the_itoa(int n);
+char    *var_repl(char *ptr, global_t *global);
+void	getCommands(char *ptr, global_t *global);
+int	execBuiltin(char **args, global_t *global);
+void	exe(global_t *global);
+int     printError(char *cmd, char *msg, global_t *global);
+void    environ(char **cmd, global_t *global);
+void	_cd(char **cmd, global_t *global);
+void    myExit(char **cmd, global_t *global);
+void	freeAll(global_t *global);
+void	freeCommands(global_t *global);
+int	_print(char *str, int fd, int new);
+int	_theatoi(char *s);
+void	_Set_env(char **cmd, global_t *global);
+env_t	*envSearches(char *str, global_t *global);
+void	_Unset_env(char **cmd, global_t *global);
+void	Print_num_fd(int n, int fd);
+char	*strCopy1(char	*str, int *index, char a);
 void	the_alias(char **cmd, global_t *global);
-char	*alias_search(char	*str, global_t *global);
-alias_t	*aliassearch(char	*str, global_t *global);
-int		is_lo_op(char *str);
-char	**advanced_split(char *str, global_t *global);
-void	exec_logical_operators(char **str, global_t *global);
-char	*get_path(char *str, global_t *global);
-void	exec_binary(command_t *command, global_t *global);
+char	*the_alias_search(char	*str, global_t *global);
+alias_t	*thealiassearch(char	*str, global_t *global);
+int	is_lo_op(char *str);
+char	**the_advanced_split(char *str, global_t *global);
+void	exe_logical_operators(char **str, global_t *global);
+char	*getPath(char *str, global_t *global);
+void	execBinary(command_t *command, global_t *global);
 extern char **environ;
 #endif
