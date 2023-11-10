@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
-*exec_builtin - run built-in command.
+*execBuiltin - run built-in command.
 *@args: arg 1.
 *@global:arg 2.
 * Return: 1 if the command is a built-in.
 */
-int	exec_builtin(char **args, global_t *global)
+int execBuiltin(char **args, global_t *global)
 {
 	char	*cmd = args[0];
 
