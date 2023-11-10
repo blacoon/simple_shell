@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- *exec_binary - Execute binary fils.
+ *execBinary - Execute binary fils.
  *@command: arg 1.
  *@global: arg 2.
  */
-void	exec_binary(command_t *command, global_t *global)
+void	execBinary(command_t *command, global_t *global)
 {
 	pid_t	n;
 	int		m;
@@ -35,10 +35,10 @@ void	exec_binary(command_t *command, global_t *global)
 }
 
 /**
- *executing - Execute commands.
- *@global: arg 1.
+ *	exe - Execute commands.
+ *	@global: arg 1.
  */
-void	executing(global_t *global)
+void	exe(global_t *global)
 {
 	command_t	*tmp = global->commands;
 	char		**str;
