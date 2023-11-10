@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * str_copy1 - Copies a substring from the input string
+ * *strCopy1 - Copies a substring from the input string
  * @str: The input string from which the substring is copied
  * @idx: A pointer to index from which copying starts
  * @a: The character at which copying stops.
  * Return: The copied substring
  */
-char	*str_copy1(char	*str, int *index, char a)
+char	*strCopy1(char	*str, int *index, char a)
 {
 	int		i;
 	int		start;
@@ -30,11 +30,11 @@ char	*str_copy1(char	*str, int *index, char a)
 }
 
 /**
- * init_env - Initialize the env variables
+ * initEnv - Initialize the env variables
  * @envp: The arr of env var passed to the program
  * @global: A pointer to global state struct
  */
-void	init_env(char **envp, global_t *global)
+void	initEnv(char **envp, global_t *global)
 {
 	int		i;
 	env_t	*env;
@@ -64,12 +64,12 @@ void	init_env(char **envp, global_t *global)
 }
 
 /**
- * env_search - Searches for an env var by name
+ * envSearch - Searches for an env var by name
  * @str: The name of the env var to search for
  * @gloabal: A pointer to the global state struct
  * Return: The value of the env var if found, NULL if not found
  */
-char	*env_search(char	*str, global_t *global)
+char	*envSearch(char	*str, global_t *global)
 {
 	env_t	*ptr;
 
@@ -84,12 +84,12 @@ char	*env_search(char	*str, global_t *global)
 }
 
 /**
- * envsearch - Searches for an env var by name and returns
+ * envSearches - Searches for an env var by name and returns
  * @str: The name of the env var to search for
  * @global: A pointer to the global state struct
  * Return: A pointer to the env var node if found, NULL if not found
  */
-env_t	*envsearch(char	*str, global_t *global)
+env_t	*envSearches(char	*str, global_t *global)
 {
 	env_t	*ptr;
 
