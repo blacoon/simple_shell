@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * _atoi - function that convert a string to an integer.
+ * _theatoi - function that convert a string to an integer.
  * @s: arg 1.
  * Return: an integer.
  */
-int _atoi(char *s)
+int _theatoi(char *s)
 {
 	unsigned int	n;
 	int				sign;
