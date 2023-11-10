@@ -1,11 +1,12 @@
 #include "shell.h"
 
 /**
- * isNum - is number.
- * @str: arg 1.
- * Return: 1 if is number.
+ * isNum - Number.
+ * @str: first argument.
+ * Return: 1.
  */
-int	isNum(char *str)
+
+int isNum(char *str)
 {
 	int i = 0;
 
@@ -26,11 +27,12 @@ int	isNum(char *str)
 }
 
 /**
- * myExit - exit the shell.
- * @cmd: arg 1;
- * @global: arg 2.
+ * myExit - exits the shell.
+ * @cmd: first argument;
+ * @global: second argument.
  */
-void    myExit(char **cmd, global_t *global)
+
+void myExit(char **cmd, global_t *global)
 {
 	int n;
 
