@@ -1,12 +1,13 @@
 #include "shell.h"
 
 /**
- *getPath - Get the path of a command.
- *@str: arg 1.
- *@global: arg 2.
- *Return: The Path of the command.
+ * getPath - retrieves the path of a command.
+ * @str: first argument.
+ * @global: second argument.
+ * Return: path
  */
-char	*getPath(char *str, global_t *global)
+
+char *getPath(char *str, global_t *global)
 {
 	char	*ptr = _strdup(str), **paths, *tmp;
 	int		i = 0;
@@ -48,8 +49,8 @@ char	*getPath(char *str, global_t *global)
 }
 
 /**
- *getPaths - Get the full paths of commands.
- *@global: arg 2.
+ * getPaths - retrieves the full paths of commands.
+ * @global: second argument.
  */
 void	getPaths(global_t *global)
 {
@@ -64,9 +65,9 @@ void	getPaths(global_t *global)
 }
 
 /**
- *getCommands - parse and store the commands.
- *@ptr: arg 1.
- *@global: arg 2.
+ * getCommands - Parse and store the commands.
+ * @ptr: first argument.
+ * @global: second argument.
  */
 void	getCommands(char *ptr, global_t *global)
 {
