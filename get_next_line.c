@@ -1,14 +1,14 @@
 #include "shell.h"
 /**
- * all - Read from fd.
+ * _all - Read from fd.
  * @fd: arg 1.
  * @left: arg 2.
  * Return: The concatenated string
  */
-static char	*all(int fd, char *left)
+static char *_all(int fd, char *left)
 {
-	char	*buffer;
-	int		readed;
+	char *buffer;
+	int readed;
 
 	readed = 1;
 	buffer = malloc(BUFFER_SIZE + 1);
@@ -30,14 +30,14 @@ static char	*all(int fd, char *left)
 }
 
 /**
- * get_line - Extract one line.
+ * getLine - Extract one line.
  * @line: arg 1.
  * Return: The extracted line
  */
-static char	*get_line(char *line)
+static char *getLine(char *line)
 {
-	int		i;
-	char	*ptr;
+	int i;
+	char *ptr;
 
 	i = 0;
 	if (!line)
@@ -61,14 +61,14 @@ static char	*get_line(char *line)
 }
 
 /**
- * ft_left - Extract the remaining part of the string.
+ * ftLeft - Extract the remaining part of the string.
  * @line: arg 1..
  * Return: The remaining part of the string
  */
-static char	*ft_left(char *line)
+static char *ftLeft(char *line)
 {
-	int		i;
-	char	*ptr;
+	int i;
+	char *ptr;
 
 	i = 0;
 	if (!line)
@@ -86,17 +86,17 @@ static char	*ft_left(char *line)
 }
 
 /**
- * _getline - Read a line from fd.
+ * _getLine - Read a line from fd.
  * @fd: arg 1.
  * @global: arg 2.
  * Return: The next line from the file descriptor,
  * or NULL on failure or end of file.
  */
-char	*_getline(int fd, global_t *global)
+char *_getLine(int fd, global_t *global)
 {
-	static char	*left;
-	char		*line;
-	char		*next_line;
+	static char *left;
+	char *line;
+	char *next_line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
