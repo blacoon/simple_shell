@@ -1,11 +1,12 @@
 #include "shell.h"
 /**
- * _all - Read from fd.
- * @fd: arg 1.
- * @left: arg 2.
- * Return: The concatenated string
+ * _All - Read from fd.
+ * @fd: first argument.
+ * @left: second argument.
+ * Return: string
  */
-static char *_all(int fd, char *left)
+
+static char *_All(int fd, char *left)
 {
 	char *buffer;
 	int readed;
@@ -30,11 +31,12 @@ static char *_all(int fd, char *left)
 }
 
 /**
- * getLine - Extract one line.
- * @line: arg 1.
- * Return: The extracted line
+ * the_get_line - extract one line.
+ * @line: first argument.
+ * Return: string
  */
-static char *getLine(char *line)
+
+static char *the_get_line(char *line)
 {
 	int i;
 	char *ptr;
@@ -61,11 +63,12 @@ static char *getLine(char *line)
 }
 
 /**
- * ftLeft - Extract the remaining part of the string.
- * @line: arg 1..
- * Return: The remaining part of the string
+ * _ft_left - extracts the left part of the string.
+ * @line: first argument.
+ * Return: string
  */
-static char *ftLeft(char *line)
+
+static char *_ft_left(char *line)
 {
 	int i;
 	char *ptr;
@@ -86,13 +89,13 @@ static char *ftLeft(char *line)
 }
 
 /**
- * _getLine - Read a line from fd.
- * @fd: arg 1.
- * @global: arg 2.
- * Return: The next line from the file descriptor,
- * or NULL on failure or end of file.
+ * _get_line - read a line from file description.
+ * @fd: first argument.
+ * @global: second argument.
+ * Return: string, NULL.
  */
-char *_getLine(int fd, global_t *global)
+
+char *_get_line(int fd, global_t *global)
 {
 	static char *left;
 	char *line;
