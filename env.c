@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * env - Print the enviroment var to the standard output
+ * environ - Print the enviroment var to the standard output
  * @cmd: An array of str representing the command and its argument
  * @global: Pointer to the globlal env struct
  */
-void env(char **cmd, global_t *global)
+void environ(char **cmd, global_t *global)
 {
 	env_t *ptr = global->env;
 
