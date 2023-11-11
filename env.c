@@ -13,9 +13,9 @@ void environ(char **cmd, global_t *global)
 	{
 		if (ptr->name)
 		{
-			print(ptr->name, 1, 0);
-			print("=", 1, 0);
-			print(ptr->value, 1, 1);
+			_print(ptr->name, 1, 0);
+			_print("=", 1, 0);
+			_print(ptr->value, 1, 1);
 		}
 		ptr = ptr->next;
 	}
