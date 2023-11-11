@@ -9,10 +9,10 @@
  */
 char	*strCopy1(char	*str, int *index, char a)
 {
-	int		i;
-	int		start;
-	char	*ptr;
-	int		y;
+	int i;
+	int start;
+	char *ptr;
+	int y;
 
 	i = *index;
 	start = *index;
@@ -34,12 +34,12 @@ char	*strCopy1(char	*str, int *index, char a)
  * @envp: The arr of env var passed to the program
  * @global: A pointer to global state struct
  */
-void	initEnv(char **envp, global_t *global)
+void initEnv(char **envp, global_t *global)
 {
-	int		i;
-	env_t	*env;
-	env_t	*head;
-	int		index;
+	int i;
+	env_t *env;
+	env_t *head;
+	int index;
 
 	i = 0;
 	head = NULL;
@@ -47,11 +47,11 @@ void	initEnv(char **envp, global_t *global)
 	{
 		index = 0;
 		env = malloc(sizeof(env_t));
-		env->name = str_copy1(envp[i], &index, '=');
+		env->name = strCopy1(envp[i], &index, '=');
 		index++;
-		env->value = str_copy1(envp[i], &index, 0);
+		env->value = strCopy1(envp[i], &index, 0);
 		env->next = NULL;
-		lstadd_back_env(&head, env);
+		_add_back_env(&head, env);
 		i++;
 	}
 	global->env = head;
@@ -69,14 +69,15 @@ void	initEnv(char **envp, global_t *global)
  * @gloabal: A pointer to the global state struct
  * Return: The value of the env var if found, NULL if not found
  */
-char	*envSearch(char	*str, global_t *global)
+
+char *envSearch(char	*str, global_t *global)
 {
-	env_t	*ptr;
+	env_t *ptr;
 
 	ptr = global->env;
 	while (ptr)
 	{
-		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_Str_comp(str, ptr->name, _Str_len(str) + 1))
 			return (ptr->value);
 		ptr = ptr->next;
 	}
@@ -89,14 +90,15 @@ char	*envSearch(char	*str, global_t *global)
  * @global: A pointer to the global state struct
  * Return: A pointer to the env var node if found, NULL if not found
  */
-env_t	*envSearches(char	*str, global_t *global)
+
+env_t	*envSearches(char *str, global_t *global)
 {
-	env_t	*ptr;
+	env_t *ptr;
 
 	ptr = global->env;
 	while (ptr)
 	{
-		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_Str_comp(str, ptr->name, _Str_len(str) + 1))
 			return (ptr);
 		ptr = ptr->next;
 	}
