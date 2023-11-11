@@ -5,6 +5,7 @@
  * @command: first argument.
  * @global: second argument.
  */
+
 void execBinary(command_t *command, global_t *global)
 {
 	pid_t n;
@@ -12,12 +13,12 @@ void execBinary(command_t *command, global_t *global)
 
 	if (!command->path)
 	{
-		print_error(command->args[0], "not found", global);
+		printError(command->args[0], "not found", global);
 		global->exit_code = 127;
 	}
 	else if (access(command->path, X_OK))
 	{
-		print_error(command->args[0], "Permission denied", global);
+		printError(command->args[0], "Permission denied", global);
 		global->exit_code = 126;
 	}
 	else
@@ -38,6 +39,7 @@ void execBinary(command_t *command, global_t *global)
  * exe - executes commands.
  * @global: first argument.
  */
+
 void exe(global_t *global)
 {
 	command_t	*tmp = global->commands;
@@ -48,13 +50,13 @@ void exe(global_t *global)
 	{
 		if (tmp->args)
 		{
-			if (!exec_builtin(tmp->args, global))
-				exec_binary(tmp, global);
+			if (!execBuiltin(tmp->args, global))
+				execBinary(tmp, global);
 		}
 		else if (tmp->tmp)
 		{
-			str = advanced_split(tmp->tmp, global);
-			exec_logical_operators(str, global);
+			str = the_advanced_split(tmp->tmp, global);
+			exe_logical_operators(str, global);
 			while (str && str[i])
 				free(str[i++]);
 			free(str);
