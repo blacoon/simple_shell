@@ -8,13 +8,13 @@
  */
 int	printError(char *cmd, char *msg, global_t *global)
 {
-	write(2, global->name, _strlen(global->name));
+	write(2, global->name, _Str_len(global->name));
 	write(2, ": ", 2);
-	putnbr_fd(global->n, 2);
+	Print_num_fd(global->n, 2);
 	write(2, ": ", 2);
-	write(2, cmd, _strlen(cmd));
+	write(2, cmd, _Str_len(cmd));
 	write(2, ": ", 2);
-	write(2, msg, _strlen(msg));
+	write(2, msg, _Str_len(msg));
 	write(2, "\n", 1);
 	return (1);
 }
@@ -28,7 +28,7 @@ int	printError(char *cmd, char *msg, global_t *global)
  */
 int _print(char *str, int fd, int new)
 {
-	write(fd, str, _strlen(str));
+	write(fd, str, _Str_len(str));
 	if (new)
 		return (write(fd, "\n", 1));
 	return (1);
