@@ -4,7 +4,7 @@
  * @cmd: An array of str representing the command and its argument
  * @global: Pointer to the globlal env struct
  */
-void environ(char **cmd, global_t *global)
+void env(char **cmd, global_t *global)
 {
 	env_t *ptr = global->env;
 
